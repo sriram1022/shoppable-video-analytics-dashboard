@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getVideoAnalytics } from "./services/api";
 import VideoTable from "./component/VideoTable";
+import Pagination from "./component/Pagination";
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -47,6 +48,10 @@ function App() {
       <h1>Shoppable Video Analytics Dashboard</h1>
 
       <VideoTable videos={videos} />
+      <Pagination
+  pagination={pagination}
+  onPageChange={setPage}
+/>
     </div>
   );
 }
