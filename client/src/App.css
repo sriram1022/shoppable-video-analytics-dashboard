@@ -1,0 +1,126 @@
+:root {
+	--ink: #1d2939;
+	--muted-ink: #667085;
+	--line: #e4e7ec;
+	--surface: #ffffff;
+	--canvas: #f6f8fb;
+	--accent: #e76f51;
+	--accent-soft: #fff1ed;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--canvas);
+	color: var(--ink);
+	font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+#root {
+	width: min(1120px, calc(100% - 40px));
+	margin: 0 auto;
+	padding: 56px 0;
+}
+
+h1 {
+	margin: 0 0 28px;
+	color: var(--ink);
+	font-size: clamp(1.7rem, 3vw, 2.35rem);
+	letter-spacing: 0;
+	line-height: 1.15;
+}
+
+.table-shell {
+	margin-top: 24px;
+	overflow: hidden;
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	background: var(--surface);
+	box-shadow: 0 14px 35px rgba(29, 41, 57, 0.08);
+}
+
+.table-scroll {
+	overflow-x: auto;
+}
+
+.analytics-table {
+	width: 100%;
+	min-width: 680px;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+.analytics-table th {
+	padding: 15px 22px;
+	border-bottom: 1px solid var(--line);
+	background: #f9fafb;
+	color: var(--muted-ink);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.analytics-table td {
+	padding: 19px 22px;
+	border-bottom: 1px solid #f0f2f5;
+	color: #344054;
+	font-size: 0.95rem;
+	font-variant-numeric: tabular-nums;
+	transition: background-color 160ms ease;
+}
+
+.analytics-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.analytics-table tbody tr:nth-child(even) td {
+	background: #fcfcfd;
+}
+
+.analytics-table tbody tr:hover td {
+	background: #fff8f5;
+}
+
+.video-title {
+	width: 42%;
+	color: var(--ink) !important;
+	font-weight: 700;
+}
+
+.number-cell,
+.rate-cell {
+	text-align: right;
+}
+
+.rate-badge {
+	display: inline-block;
+	min-width: 68px;
+	padding: 6px 9px;
+	border-radius: 999px;
+	background: var(--accent-soft);
+	color: #c84f32;
+	font-size: 0.82rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+@media (max-width: 720px) {
+	#root {
+		width: min(100% - 24px, 1120px);
+		padding: 32px 0;
+	}
+
+	h1 {
+		margin-bottom: 20px;
+	}
+
+	.analytics-table th,
+	.analytics-table td {
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+}

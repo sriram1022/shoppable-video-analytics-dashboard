@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 import { createEvent, getVideoAnalytics } from "./services/api";
 import VideoTable from "./component/VideoTable";
 import Pagination from "./component/Pagination";
