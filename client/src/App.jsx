@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { getVideoAnalytics } from "./services/api";
+import { createEvent, getVideoAnalytics } from "./services/api";
 import VideoTable from "./component/VideoTable";
 import Pagination from "./component/Pagination";
+import SimulateTrafficButton from "./component/SimulateTrafficButton";
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -11,6 +12,7 @@ function App() {
   const [error, setError] = useState("");
 
   const [page, setPage] = useState(1);
+  const [simulationLoading, setSimulationLoading] = useState(false);
 
   const limit = 5;
 
@@ -30,10 +32,52 @@ function App() {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
+ 
+ useEffect(() => {
     fetchAnalytics();
   }, [page]);
+
+  const handleSimulateTraffic = async () => {
+  if (videos.length === 0) {
+    return;
+  }
+
+  try {
+    setSimulationLoading(true);
+
+    
+    const randomVideo =
+      videos[Math.floor(Math.random() * videos.length)];
+
+   
+    const eventTypes = [
+      "view",
+      "click",
+      "add_to_cart",
+    ];
+
+    
+    const randomEventType =
+      eventTypes[
+        Math.floor(Math.random() * eventTypes.length)
+      ];
+
+    
+    await createEvent(
+      randomVideo.id,
+      randomEventType
+    );
+
+    
+    await fetchAnalytics();
+  } catch (error) {
+    console.error("Failed to simulate traffic", error);
+  } finally {
+    setSimulationLoading(false);
+  }
+};
+
+  
 
   if (loading) {
     return <h2>Loading analytics...</h2>;
@@ -46,6 +90,11 @@ function App() {
   return (
     <div>
       <h1>Shoppable Video Analytics Dashboard</h1>
+
+      <SimulateTrafficButton
+      onSimulate={handleSimulateTraffic}
+      loading={simulationLoading}
+    />
 
       <VideoTable videos={videos} />
       <Pagination

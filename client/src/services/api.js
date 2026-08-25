@@ -15,3 +15,15 @@ export const getVideoAnalytics = async (page = 1, limit = 5) => {
 
   return response.data;
 };
+
+export const createEvent = async (videoId, eventType) => {
+  const response = await axios.post(
+    `${API_BASE_URL}/events`,
+    {
+      videoId,
+      eventType,
+    }
+  );
+
+  return response.data;
+};
