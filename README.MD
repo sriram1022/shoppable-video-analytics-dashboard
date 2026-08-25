@@ -31,3 +31,10 @@ https://github.com/sriram1022/nft-preview-card
 https://github.com/sriram1022/sriramkorla10-ME_QKART_FRONTEND_V2
 https://github.com/sriram1022/sriramkorla10-ME_QTRIPDYNAMIC
 https://github.com/sriram1022/devTinder
+
+-----------------------------------------------------------------------------
+explaining why i am a strong candidate for this position.
+
+https://youtube.com/shorts/HGhNOilpZ5w?si=FzioSC79ate8sWMJ
+
+-------------------------------------------------------------------------------
