@@ -39,6 +39,14 @@ https://youtube.com/shorts/07FW7GxyOJM?si=RAG9DMW3KYdlPLLG
 
 
 -------------------------------------------------------------------------
+
+VEDIO EXPLANATION ON THE PROJECT
+
+https://youtu.be/v1lZzISji-8?si=v5bsMHtZjdHoqryz--clientside
+https://youtu.be/1CIc-8zI-hY?si=8LtW41nrcYofApdO--serverside 
+
+
+------------------------------------------------------------------------
 ## React Compiler
 
 # Shoppable Video Analytics Dashboard

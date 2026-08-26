@@ -12,7 +12,7 @@ router.post("/", (req, res) => {
     "add_to_cart",
   ];
 
-  // Validation
+  
   if (!videoId || !eventType) {
     return res.status(400).json({
       message: "videoId and eventType are required",
@@ -26,7 +26,7 @@ router.post("/", (req, res) => {
     });
   }
 
-  // Check whether video exists
+  
   const video = db
     .prepare("SELECT id FROM videos WHERE id = ?")
     .get(videoId);
@@ -37,7 +37,7 @@ router.post("/", (req, res) => {
     });
   }
 
-  // Insert event
+  
   const result = db
     .prepare(`
       INSERT INTO engagement_events (
