@@ -1,7 +1,9 @@
 const express = require("express");
-const db = require("../../database/db");
 
 const router = express.Router();
+const db = require("../../database/db");
+
+
 
 router.get("/videos", (req, res) => {
   const page = Number(req.query.page) || 1;

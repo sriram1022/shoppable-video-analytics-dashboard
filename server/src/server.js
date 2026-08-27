@@ -5,11 +5,6 @@ const analyticsRouter = require("./routes/analytics");
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
-
-
-
 app.use(
   cors({
     origin: [
@@ -20,6 +15,8 @@ app.use(
     allowedHeaders: ["Content-Type"],
   })
 );
+
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
