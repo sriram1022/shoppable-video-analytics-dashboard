@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_BASE_URL =  "https://shoppable-video-api.onrender.com/api";
+const API_BASE_URL =
+  "https://shoppable-video-analytics-dashboard.onrender.com/api";
+ 
 
 export const getVideoAnalytics = async (page = 1, limit = 5) => {
   const response = await axios.get(
