@@ -20,21 +20,18 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Shoppable Video Analytics API is running",
+    message: "VERSION TEST 12345",
+    timestamp: new Date().toISOString(),
   });
 });
 
-app.get("/test-server", (req, res) => {
+app.get("/hello", (req, res) => {
   res.json({
-    message: "Main server.js is working",
+    message: "HELLO FROM NEW DEPLOYMENT",
   });
 });
 
-app.get("/api/test", (req, res) => {
-  res.json({
-    message: "API route from main server is working",
-  });
-});
+
 
 
 app.use("/api/events", eventsRouter);
